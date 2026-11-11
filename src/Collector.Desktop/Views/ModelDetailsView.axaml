@@ -1,0 +1,44 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:core="using:Collector.Core" xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             x:Class="Collector.Desktop.ModelDetailsView" d:DesignWidth="276" d:DesignHeight="1500"
+             Foreground="{DynamicResource PrimaryTextBrush}">
+  <StackPanel Spacing="14">
+    <TextBlock x:Name="ModelKind" Text="КАРТОЧКА МОДЕЛИ" FontSize="10" Foreground="{DynamicResource AccentBrush}" />
+    <Button x:Name="Open3DButton" Content="3D-просмотр" Classes="action" />
+    <Border x:Name="PreviewHost" IsVisible="False" />
+    <TextBlock Text="НАЗВАНИЕ" Classes="form-label" />
+    <TextBox x:Name="NameInput" Text="Arcadia GT" MinHeight="36" />
+    <TextBlock Text="КАТЕГОРИЯ" Classes="form-label" />
+    <TextBox x:Name="CategoryInput" Text="Машины" MinHeight="36" />
+    <TextBlock Text="РЕДКОСТЬ" Classes="form-label" />
+    <ComboBox x:Name="RarityInput" HorizontalAlignment="Stretch" />
+    <TextBlock Text="СТАТУС ПЕЧАТИ" Classes="form-label" />
+    <ComboBox x:Name="StateInput" HorizontalAlignment="Stretch" />
+    <TextBlock Text="АВТОР / СТУДИЯ" Classes="form-label" />
+    <TextBox x:Name="AuthorInput" Text="Студия" MinHeight="36" />
+    <TextBlock Text="ТЕГИ ЧЕРЕЗ ЗАПЯТУЮ" Classes="form-label" />
+    <TextBox x:Name="TagsInput" Text="машина, спорт" MinHeight="36" />
+    <TextBlock Text="ЗАМЕТКИ" Classes="form-label" />
+    <TextBox x:Name="NotesInput" Text="Подготовить модель к печати" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="100" />
+    <TextBlock Text="ХРАНЕНИЕ" Classes="form-label" />
+    <TextBlock x:Name="StorageInfo" Text="Машины · ссылки на исходные файлы" FontSize="12" TextWrapping="Wrap" />
+    <TextBlock x:Name="StorageWarning" Foreground="#9B690E" FontSize="12" TextWrapping="Wrap" IsVisible="False" />
+    <TextBlock x:Name="LastChecked" Classes="muted" FontSize="11" IsVisible="False" />
+    <Button x:Name="ResourcesButton" Content="Все файлы модели" Classes="action" />
+    <Button x:Name="AttachButton" Content="Прикрепить файлы" Classes="action" />
+    <Button x:Name="VerifyButton" Content="Проверить файлы" Classes="action" />
+    <TextBlock Text="ФАЙЛЫ" Classes="form-label" />
+    <TextBlock x:Name="FileSummary" Text="4 файла · 42,8 МБ" FontSize="13" />
+    <ItemsControl x:Name="FilesList">
+      <ItemsControl.ItemTemplate>
+        <DataTemplate x:DataType="core:ModelFile">
+          <TextBlock Text="{Binding RelativePath}" Classes="muted" FontSize="11" TextWrapping="Wrap" Margin="0,0,0,10" />
+        </DataTemplate>
+      </ItemsControl.ItemTemplate>
+    </ItemsControl>
+    <TextBlock x:Name="MoreFiles" Classes="muted" FontSize="11" IsVisible="False" />
+    <TextBlock x:Name="FolderPath" Classes="subtle" FontSize="11" />
+    <Button x:Name="FolderButton" Content="Открыть папку" Classes="action" />
+    <Button x:Name="HideButton" Content="Скрыть карточку" Classes="action" />
+  </StackPanel>
+</UserControl>

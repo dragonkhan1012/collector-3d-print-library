@@ -1,0 +1,24 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <SolidColorBrush x:Key="SidebarBackgroundBrush">#222A36</SolidColorBrush>
+  <SolidColorBrush x:Key="CatalogBackgroundBrush">#F4F6F8</SolidColorBrush>
+  <SolidColorBrush x:Key="InspectorBackgroundBrush">#FFFFFF</SolidColorBrush>
+  <SolidColorBrush x:Key="CardBackgroundBrush">#FFFFFF</SolidColorBrush>
+  <SolidColorBrush x:Key="ArtworkBackgroundBrush">#E9EDF2</SolidColorBrush>
+  <SolidColorBrush x:Key="FooterBackgroundBrush">#F3F5F7</SolidColorBrush>
+  <SolidColorBrush x:Key="PrimaryTextBrush">#202633</SolidColorBrush>
+  <SolidColorBrush x:Key="MutedTextBrush">#697486</SolidColorBrush>
+  <SolidColorBrush x:Key="SubtleTextBrush">#8993A1</SolidColorBrush>
+  <SolidColorBrush x:Key="OutlineBrush">#DCE1E8</SolidColorBrush>
+  <SolidColorBrush x:Key="AccentBrush">#445E89</SolidColorBrush>
+  <SolidColorBrush x:Key="AccentTextBrush">#FFFFFF</SolidColorBrush>
+  <SolidColorBrush x:Key="SelectedOutlineBrush">#718CB8</SolidColorBrush>
+  <SolidColorBrush x:Key="ActionBackgroundBrush">#222A36</SolidColorBrush>
+  <SolidColorBrush x:Key="ActionTextBrush">#F1F4F8</SolidColorBrush>
+  <SolidColorBrush x:Key="SidebarActionBackgroundBrush">#222A36</SolidColorBrush>
+  <SolidColorBrush x:Key="SidebarTextBrush">#F1F4F8</SolidColorBrush>
+  <x:Double x:Key="CardWidth">206</x:Double>
+  <x:Double x:Key="CardArtworkHeight">116</x:Double>
+  <GridLength x:Key="SidebarWidth">196</GridLength>
+  <GridLength x:Key="InspectorWidth">316</GridLength>
+  <Thickness x:Key="CatalogMargin">22,24,20,0</Thickness>
+</ResourceDictionary>

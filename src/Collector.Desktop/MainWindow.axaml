@@ -1,0 +1,85 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="Collector.Desktop.MainWindow" mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="920"
+        Title="Коллекционер · 3D-модели" Width="1440" Height="920" MinWidth="1120" MinHeight="680"
+        FontFamily="Inter" Background="{DynamicResource CatalogBackgroundBrush}" Foreground="{DynamicResource PrimaryTextBrush}">
+  <Grid RowDefinitions="*,36">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="{DynamicResource SidebarWidth}" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="{DynamicResource InspectorWidth}" />
+    </Grid.ColumnDefinitions>
+    <Border Background="{DynamicResource SidebarBackgroundBrush}">
+      <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Margin="20,30" Spacing="12">
+          <TextBlock Text="КОЛЛЕКЦИОНЕР" FontSize="16" Foreground="{DynamicResource SidebarTextBrush}" />
+          <TextBlock Text="Библиотека 3D-моделей" Classes="muted" FontSize="12" />
+          <ComboBox x:Name="CollectionChooser" HorizontalAlignment="Stretch" Background="White" Foreground="{DynamicResource PrimaryTextBrush}" />
+          <Button x:Name="CollectionsButton" Content="Коллекции и папки" Classes="nav" />
+          <Button x:Name="AllModelsButton" Content="Все модели" Classes="nav" />
+          <Button x:Name="PlannedButton" Content="Хочу напечатать" Classes="nav" />
+          <Button x:Name="RecentButton" Content="Недавние" Classes="nav" />
+          <Button x:Name="SettingsButton" Content="⚙ Настройки" Classes="nav" />
+          <TextBlock Text="КАТЕГОРИИ" Classes="subtle" FontSize="11" />
+          <Button x:Name="NewCategoryButton" Content="+ Категория" Classes="nav" />
+          <StackPanel x:Name="Categories" Spacing="6" />
+          <Border Height="12" />
+          <Button x:Name="HiddenButton" Content="Скрытые модели" Classes="nav" />
+          <Button x:Name="DemoViewerButton" Content="3D-просмотр" Classes="nav" />
+          <Button x:Name="ImportButton" Content="+ Добавить модели" Classes="accent" />
+          <Button x:Name="PendingImportsButton" Content="Восстановить импорт" Classes="nav" IsVisible="False" />
+          <Button x:Name="CancelScanButton" Content="Отменить чтение" Classes="nav" IsVisible="False" />
+          <TextBlock Text="Добавляйте ссылки или копии. Скрытие карточки сохраняет файлы на диске." Classes="subtle" FontSize="11" />
+          <Border Height="8" />
+          <Button x:Name="MusicButton" Content="Музыка: выключена" Classes="nav" />
+          <Button x:Name="EffectsButton" Content="Звуки: включены" Classes="nav" />
+          <TextBlock Text="Лунный архив · оригинальная музыка" Classes="subtle" FontSize="10" />
+          <TextBlock Text="Тестовая версия 0.3.1" Classes="subtle" FontSize="11" />
+        </StackPanel>
+      </ScrollViewer>
+    </Border>
+    <Grid Grid.Column="1" Margin="{DynamicResource CatalogMargin}" RowDefinitions="Auto,Auto,Auto,*">
+      <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,8">
+        <StackPanel Spacing="5">
+          <TextBlock Text="Каталог моделей" FontSize="30" />
+          <TextBlock x:Name="Count" Classes="muted" FontSize="13" />
+        </StackPanel>
+        <Button Grid.Column="1" x:Name="NewModelButton" Content="+ Новая карточка" Classes="accent" VerticalAlignment="Top" />
+      </Grid>
+      <TextBlock Grid.Row="1" Text="Собирайте редкие находки. Планируйте следующую печать." Classes="muted" FontSize="13" Margin="0,8,0,20" />
+      <Grid Grid.Row="2" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="10" Margin="0,0,0,20">
+        <TextBox x:Name="Search" Watermark="Поиск по названию, автору или #тегу" MinWidth="240" />
+        <ComboBox Grid.Column="1" x:Name="RarityFilter" MinWidth="170" SelectedIndex="0" />
+        <ComboBox Grid.Column="2" x:Name="SortFilter" MinWidth="160" SelectedIndex="0" />
+      </Grid>
+      <Grid Grid.Row="3" RowDefinitions="*,Auto">
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+          <WrapPanel x:Name="Cards" Orientation="Horizontal" />
+        </ScrollViewer>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="12" Margin="0,8">
+          <Button x:Name="PreviousPage" Content="Предыдущая" />
+          <TextBlock x:Name="PageInfo" Classes="muted" FontSize="12" VerticalAlignment="Center" />
+          <Button x:Name="NextPage" Content="Следующая" />
+        </StackPanel>
+      </Grid>
+    </Grid>
+    <Border Grid.Column="2" Background="{DynamicResource InspectorBackgroundBrush}" Padding="20,24">
+      <Grid RowDefinitions="Auto,*">
+        <Border x:Name="EditNotice" IsVisible="False" Margin="0,0,0,18">
+          <StackPanel Spacing="8">
+            <TextBlock Text="Есть несохранённые изменения" FontSize="13" Foreground="#9B690E" />
+            <Button x:Name="SaveButton" Content="Сохранить изменения" Classes="accent" />
+            <Button x:Name="CancelEditButton" Content="Отменить изменения" Classes="action" />
+          </StackPanel>
+        </Border>
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled">
+          <StackPanel x:Name="Detail" Spacing="14" />
+        </ScrollViewer>
+      </Grid>
+    </Border>
+    <Border Grid.Row="1" Grid.ColumnSpan="3" Background="{DynamicResource FooterBackgroundBrush}" Padding="22,8">
+      <TextBlock x:Name="Status" Text="Готово" Classes="muted" FontSize="12" />
+    </Border>
+  </Grid>
+</Window>

@@ -1,0 +1,11 @@
+{
+  "folders": [
+    {
+      "name": "Коллекционер · 3D-модели",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "window.title": "Коллекционер — ${activeEditorShort}"
+  }
+}

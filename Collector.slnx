@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Collector.Core/Collector.Core.csproj" />
+    <Project Path="src/Collector.Desktop/Collector.Desktop.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Collector.Checks/Collector.Checks.csproj" />
+    <Project Path="tests/Collector.UiChecks/Collector.UiChecks.csproj" />
+    <Project Path="tests/Collector.AudioChecks/Collector.AudioChecks.csproj" />
+    <Project Path="tests/Collector.PreviewChecks/Collector.PreviewChecks.csproj" />
+    <Project Path="tests/Collector.StorageChecks/Collector.StorageChecks.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,13 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" x:Class="Collector.Desktop.EmptyDetailsView"
+             d:DesignWidth="276" d:DesignHeight="500" Foreground="{DynamicResource PrimaryTextBrush}">
+  <StackPanel Spacing="14">
+    <TextBlock Text="Ваша следующая находка" FontSize="24" TextWrapping="Wrap" />
+    <TextBlock Text="Выберите модель, чтобы посмотреть файлы, назначить редкость и добавить заметки." Classes="muted" FontSize="14" />
+    <Border Height="24" />
+    <TextBlock Text="НАЧНИТЕ СО СВОЕЙ КОЛЛЕКЦИИ" Foreground="{DynamicResource AccentBrush}" FontSize="10" />
+    <TextBlock Text="Создайте коллекцию, затем нажмите «+ Добавить модели». Выберите файлы или папку и способ хранения: ссылки или копии." Classes="muted" FontSize="13" />
+    <TextBlock Text="Редкость — ваша личная оценка: от обычной до легендарной. Её можно менять в любой момент." Classes="muted" FontSize="13" />
+    <TextBlock Text="Встроенные примеры вымышлены и не содержат файлов для печати." Classes="subtle" FontSize="12" />
+  </StackPanel>
+</UserControl>

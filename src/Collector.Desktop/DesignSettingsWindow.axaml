@@ -1,0 +1,16 @@
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" x:Class="Collector.Desktop.DesignSettingsWindow"
+        d:DesignWidth="560" d:DesignHeight="440" Title="Настройки оформления" Width="560" Height="440" MinWidth="520" MinHeight="400"
+        WindowStartupLocation="CenterOwner" Background="{DynamicResource CatalogBackgroundBrush}" Foreground="{DynamicResource PrimaryTextBrush}">
+  <StackPanel Margin="26" Spacing="14">
+    <TextBlock Text="Выберите оформление" FontSize="24" />
+    <TextBlock Text="Мастерская установлена по умолчанию. Выбор применяется сразу и сохраняется для следующего запуска." Classes="muted" FontSize="13" />
+    <ComboBox x:Name="DesignPicker" MinHeight="42" />
+    <TextBlock x:Name="Description" Classes="muted" FontSize="13" />
+    <TextBlock Text="01 Атлас · тёплая подача&#10;02 Витрина · крупные превью&#10;03 Мастерская · плотный каталог (основная)&#10;04 Полки · крупные карточки&#10;05 Чертёж · технический стиль" Classes="muted" FontSize="12" />
+    <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Right">
+      <Button x:Name="CancelButton" Content="Отмена" Classes="action" />
+      <Button x:Name="ApplyButton" Content="Применить оформление" Classes="accent" />
+    </StackPanel>
+  </StackPanel>
+</Window>

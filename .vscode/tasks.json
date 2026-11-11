@@ -1,0 +1,123 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Коллекционер: сборка",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "build",
+        "src/Collector.Desktop/Collector.Desktop.csproj"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "DOTNET_CLI_HOME": "${workspaceFolder}/.local/tooling",
+          "AVALONIA_TELEMETRY_OPTOUT": "1"
+        }
+      },
+      "problemMatcher": "$msCompile",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Коллекционер: запуск",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "src/Collector.Desktop/Collector.Desktop.csproj",
+        "--",
+        "--data-dir",
+        "${workspaceFolder}/.local-data"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "DOTNET_CLI_HOME": "${workspaceFolder}/.local/tooling",
+          "AVALONIA_TELEMETRY_OPTOUT": "1"
+        }
+      },
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Коллекционер: проверки",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "tests/Collector.Checks/Collector.Checks.csproj"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "DOTNET_CLI_HOME": "${workspaceFolder}/.local/tooling",
+          "AVALONIA_TELEMETRY_OPTOUT": "1"
+        }
+      },
+      "problemMatcher": "$msCompile",
+      "group": "test"
+    },
+    {
+      "label": "Коллекционер: проверки звуков",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "tests/Collector.AudioChecks/Collector.AudioChecks.csproj"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "DOTNET_CLI_HOME": "${workspaceFolder}/.local/tooling",
+          "AVALONIA_TELEMETRY_OPTOUT": "1"
+        }
+      },
+      "problemMatcher": "$msCompile",
+      "group": "test"
+    },
+    {
+      "label": "Коллекционер: проверки 3D",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "tests/Collector.PreviewChecks/Collector.PreviewChecks.csproj"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "DOTNET_CLI_HOME": "${workspaceFolder}/.local/tooling",
+          "AVALONIA_TELEMETRY_OPTOUT": "1"
+        }
+      },
+      "problemMatcher": "$msCompile",
+      "group": "test"
+    },
+    {
+      "label": "Коллекционер: проверки хранения",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "tests/Collector.StorageChecks/Collector.StorageChecks.csproj"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "DOTNET_CLI_HOME": "${workspaceFolder}/.local/tooling",
+          "AVALONIA_TELEMETRY_OPTOUT": "1"
+        }
+      },
+      "problemMatcher": "$msCompile",
+      "group": "test"
+    }
+  ]
+}

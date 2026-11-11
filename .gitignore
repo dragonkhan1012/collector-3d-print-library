@@ -1,0 +1,33 @@
+# Build output
+**/bin/
+**/obj/
+artifacts/
+TestResults/
+
+# Local app data, model files and import journals
+.local/
+.local-data/
+data/
+models/
+*.stl
+*.obj
+*.3mf
+*.gcode
+
+# Local backups and archives
+Backups/
+backups/
+*.zip
+*.bak
+
+# IDE and OS files
+.DS_Store
+.idea/
+*.user
+*.suo
+.vscode/*
+!.vscode/tasks.json
+
+# Logs and temporary files
+*.log
+*.tmp

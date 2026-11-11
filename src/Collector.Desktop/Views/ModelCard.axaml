@@ -1,0 +1,19 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:Collector.Desktop" xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             x:Class="Collector.Desktop.ModelCard" x:DataType="local:CardPresentation" d:DesignWidth="220" d:DesignHeight="260">
+  <Design.DataContext><local:CardPresentation /></Design.DataContext>
+  <Button x:Name="CardButton" Classes="model-card" Classes.selected="{Binding IsSelected}">
+    <StackPanel Spacing="9">
+      <Grid Height="{DynamicResource CardArtworkHeight}" Background="{DynamicResource ArtworkBackgroundBrush}">
+        <TextBlock Text="{Binding Symbol}" FontSize="76" Foreground="{Binding RarityBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBlock Text="{Binding StorageLabel}" Classes="muted" FontSize="9" Margin="12" VerticalAlignment="Bottom" />
+      </Grid>
+      <StackPanel Spacing="8" Margin="14,4,14,14">
+        <TextBlock Text="{Binding RarityLabel}" FontSize="10" Foreground="{Binding RarityBrush}" />
+        <TextBlock Text="{Binding Name}" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource PrimaryTextBrush}" TextTrimming="CharacterEllipsis" MaxLines="2" TextWrapping="Wrap" Height="44" />
+        <TextBlock Text="{Binding CategoryAndState}" Classes="muted" FontSize="11" />
+        <TextBlock Text="{Binding Tags}" Foreground="{DynamicResource MutedTextBrush}" FontSize="11" TextTrimming="CharacterEllipsis" />
+      </StackPanel>
+    </StackPanel>
+  </Button>
+</UserControl>
